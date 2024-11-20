@@ -81,9 +81,18 @@ function showData(){
                         <td>${ProductData[i].count}</td>
                         <td>${ProductData[i].category}</td>
                         <td><button id="update">update</button></td>
-                        <td> <button id="delete">delete</button></td>
+                        <td> <button onclick ="DeleteData( ${i} )"  id="delete">delete</button></td>
                     </tr>`
 
     }
     document.getElementById('tbody').innerHTML =table;
+}
+
+
+//DeleteProduct
+
+function DeleteData(i){
+    ProductData.splice(i,1);
+    localStorage.products =JSON.stringify(ProductData);
+    showData();
 }
