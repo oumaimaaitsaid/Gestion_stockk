@@ -69,6 +69,9 @@ letter-spacing: 2px;
 .btnOutput button{
     width: 45%;
 }
+#deleteAll{
+    margin: 20px 0;
+}
 table{
     width: 100%;
     text-align: center;
