@@ -1,10 +1,11 @@
 *{
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 body{
-    background-color:#222;
-    color: #fff;
+    background-color:#fff;
+    color: #000000;
     font-style: oblique;
     
     
@@ -27,10 +28,11 @@ margin: 4px 0;
 padding: 4px;
 border-radius: 4px;
 background: black;
+color: #fff;
 }
 input:hover{
-    background: #1e2b47;
-    transform: scale(1.1);
+    background: #161e2d;
+    transform: scale(1.02);
 }
 .price input{
     width:20%;

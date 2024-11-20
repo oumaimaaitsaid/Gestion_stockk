@@ -17,15 +17,15 @@
         <div class="inputs">
             <input type="text" id="title" placeholder="title">
             <div class="price">
-                <input type="number" id="price" placeholder="price">
-                <input type="number" id="taxes" placeholder="taxes">
-                <input type="number" id="ads" placeholder="ads">
-                <input type="number" id="discount" placeholder="discount">
+                <input onkeyup="getTotal()" type="number" id="price" placeholder="price">
+                <input onkeyup="getTotal()"  type="number" id="taxes" placeholder="taxes">
+                <input onkeyup="getTotal()"  type="number" id="ads" placeholder="ads">
+                <input onkeyup="getTotal()" type="number" id="discount" placeholder="discount">
                 <small id="total">1234</small>
             </div>
             <input type="text" id="count" placeholder="count">
             <input type="text" id="category" placeholder="category">
-            <button type="submit">Create</button>
+            <button id="submit">Create</button>
         </div>
         <div class="output">
             <div class="searchBlock">
@@ -96,5 +96,5 @@
         </div>
     </div>
 </body>
-
+<script src="script.js"></script>
 </html>
