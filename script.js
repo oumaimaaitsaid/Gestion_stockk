@@ -44,7 +44,16 @@ submit.onclick =function(){
         count:count.value,
         category:category.value
     }
-    ProductData.push(newProduct)
+    if(newProduct.count>1){
+        for (let i =0 ;i < newProduct.count;i++){
+            ProductData.push(newProduct);
+        }
+
+    }
+    else{
+        ProductData.push(newProduct);
+    }
+    
     
     localStorage.setItem('products',JSON.stringify(ProductData));
     clearData();
@@ -88,7 +97,7 @@ function showData(){
     document.getElementById('tbody').innerHTML =table;
     let btnDelete =document.getElementById('deleteAll');
     if(ProductData.length > 0){
-       btnDelete.innerHTML = `<button onclick="deleteAll()">DeleteAll</button>`;
+       btnDelete.innerHTML = `<button onclick="deleteAll()">DeleteAll(${ProductData.length})</button>`;
     }
     else{
         btnDelete.innerHTML = '';
