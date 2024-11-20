@@ -50,7 +50,7 @@ submit.onclick =function(){
     clearData();
     
 }
-
+showData()
 //clear inputs
 
 function clearData(){
@@ -62,4 +62,28 @@ function clearData(){
     total.innerHTML='';
     count.value='';
     category.value='';
+}
+
+//Read Data
+
+function showData(){
+    let table = '';
+    for(let i = 0 ;i < ProductData.length;i++){
+        table += `
+                    <tr>
+                        <td>${i}</td>
+                        <td>${ProductData[i].title}</td>
+                        <td>${ProductData[i].price}</td>
+                        <td>${ProductData[i].taxes}</td>
+                        <td>${ProductData[i].ads}</td>
+                        <td>${ProductData[i].discount}</td>
+                        <td>${ProductData[i].total}</td>
+                        <td>${ProductData[i].count}</td>
+                        <td>${ProductData[i].category}</td>
+                        <td><button id="update">update</button></td>
+                        <td> <button id="delete">delete</button></td>
+                    </tr>`
+
+    }
+    document.getElementById('tbody').innerHTML =table;
 }
