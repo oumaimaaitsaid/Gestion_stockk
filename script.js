@@ -6,11 +6,13 @@ const discount =document.getElementById('discount');
 const total =document.getElementById('total');
 const count =document.getElementById('count');
 const category =document.getElementById('category');
-const submit =document.getElementById('submit')
+const submit =document.getElementById('submit');
+let tmp;
+let mode ='Create'
 
 //get Total
 function getTotal(){
-    if(price.value!=''){
+    if(price.value!= ''){
         let result =(+price.value + +ads.value + +taxes.value ) -(discount.value);
         total.innerHTML =result;
         total.style.background="#040";
@@ -44,6 +46,7 @@ submit.onclick =function(){
         count:count.value,
         category:category.value
     }
+    if(mode=== 'Create'){
     if(newProduct.count>1){
         for (let i =0 ;i < newProduct.count;i++){
             ProductData.push(newProduct);
@@ -53,10 +56,20 @@ submit.onclick =function(){
     else{
         ProductData.push(newProduct);
     }
+}
+    else{
+    ProductData[tmp] = newProduct;
+    submit.innerHTML='Create'
+    count.style.display='block';
     
     
-    localStorage.setItem('products',JSON.stringify(ProductData));
+    }
+    
+
+
+     localStorage.setItem('products',JSON.stringify(ProductData));
     clearData();
+   showData()
     
 }
 showData()
@@ -76,6 +89,7 @@ function clearData(){
 //Read Data
 
 function showData(){
+    getTotal();
     let table = '';
     for(let i = 0 ;i < ProductData.length;i++){
         table += `
@@ -89,7 +103,7 @@ function showData(){
                         <td>${ProductData[i].total}</td>
                         <td>${ProductData[i].count}</td>
                         <td>${ProductData[i].category}</td>
-                        <td><button id="update">update</button></td>
+                        <td><button onclick="updateProduct (${i})" "id="update">update</button></td>
                         <td> <button onclick ="DeleteData( ${i} )"  id="delete">delete</button></td>
                     </tr>`
 
@@ -118,3 +132,26 @@ function deleteAll(){
     ProductData.splice(0);
     showData();
 }
+
+//update Product
+
+function updateProduct(i){
+    console.log(i);
+    title.value=ProductData[i].title;
+    price.value=ProductData[i].price;
+    taxes.value=ProductData[i].taxes;
+    ads.value=ProductData[i].ads;
+    discount.value=ProductData[i].discount;
+    getTotal();
+    count.style.display='none';
+    category.value=ProductData[i].category;
+    submit.innerHTML="update"
+    mode='update';
+   tmp=i;
+   scroll({
+    top:0,
+    behavior:'smooth'
+   })
+   
+   
+    }
