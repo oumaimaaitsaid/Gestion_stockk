@@ -9,6 +9,7 @@ const category =document.getElementById('category');
 const submit =document.getElementById('submit');
 let tmp;
 let mode ='Create'
+let mood='title'
 
 //get Total
 function getTotal(){
@@ -154,4 +155,71 @@ function updateProduct(i){
    })
    
    
+    }
+
+
+    //fuction search by title or categorie
+
+    function getSearchMood(id){
+        let search =document.getElementById('Search');
+        if(id =='Search by Title'){
+            mood='title'
+        }
+        else{
+             mood='Categorie'
+            }
+            search.placeholder ='search by '+ mood;
+         search.focus() ;
+         search.value='';
+         showData() ;
+        
+        
+    }
+
+    function searchProduct(value){
+        let table =''
+        for(let i =0 ; i<ProductData.length ; i++){
+        if(mood =='title'){
+           
+                if(ProductData[i].title.includes(value.toLowerCase()))
+       {table += `
+    <tr>
+        <td>${i}</td>
+        <td>${ProductData[i].title}</td>
+        <td>${ProductData[i].price}</td>
+        <td>${ProductData[i].taxes}</td>
+        <td>${ProductData[i].ads}</td>
+        <td>${ProductData[i].discount}</td>
+        <td>${ProductData[i].total}</td>
+        <td>${ProductData[i].count}</td>
+        <td>${ProductData[i].category}</td>
+        <td><button onclick="updateProduct (${i})" "id="update">update</button></td>
+        <td> <button onclick ="DeleteData( ${i} )"  id="delete">delete</button></td>
+    </tr>`}
+                
+                
+
+            
+            
+            
+        }
+        else 
+        {
+            
+                if(ProductData[i].category.includes(value.toLowerCase()))
+       {table += `
+        <tr>
+        <td>${i}</td>
+        <td>${ProductData[i].title}</td>
+        <td>${ProductData[i].price}</td>
+        <td>${ProductData[i].taxes}</td>
+        <td>${ProductData[i].ads}</td>
+        <td>${ProductData[i].discount}</td>
+        <td>${ProductData[i].total}</td>
+        <td>${ProductData[i].count}</td>
+        <td>${ProductData[i].category}</td>
+        <td><button onclick="updateProduct (${i})" "id="update">update</button></td>
+        <td> <button onclick ="DeleteData( ${i} )"  id="delete">delete</button></td>
+    </tr>`}
+             }}document.getElementById('tbody').innerHTML =table;
     }
