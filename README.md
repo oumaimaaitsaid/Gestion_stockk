@@ -1,7 +1,9 @@
 **Product Management Application**
+
 This is a simple Product Management application built using HTML, CSS, and JavaScript. The application allows users to add, update, delete, and search for products. The product data is stored in the localStorage to persist even when the browser is closed and reopened.
 
 **Features**
+
 **1-Add Products:**
 
 Users can add a new product with the following details:
@@ -13,18 +15,22 @@ Discount
 Total price (calculated automatically based on the above inputs)
 Count (quantity of products)
 Category
+
 **2-View Products:**
 
 All added products are displayed in a table format.
 Each product's details (title, price, ads, taxes, discount, total, count, and category) are shown in the table.
+
 **3-Update Products:**
 
 Users can update the details of an existing product.
 Clicking on the "update" button next to any product allows the user to edit the product's details and save the changes.
+
 **4-Delete Products:**
 
 Users can delete individual products using the "delete" button.
 There is also an option to delete all products from the localStorage.
+
 **5-Search Products:**
 
 Users can search for products by either title or category.
@@ -43,6 +49,7 @@ Use the provided form to add, update, and search for products.
 The data will be stored in the localStorage of your browser, and you can test persistence by refreshing the page.
 
 **How It Works**
+
 1-**Adding Products:**
 
 Fill out the product form with the required fields (title, price, ads, taxes, discount, count, and category).
