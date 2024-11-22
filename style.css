@@ -1,79 +1,175 @@
-*{
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     overflow-x: hidden;
 }
-body{
-    background-color:#fff;
-    color: #000000;
-    font-style: oblique;
-    
-    
+
+body {
+    background-color: #f5f5f5; 
+    color: #333; 
+    font-family: 'Arial', sans-serif; 
+    line-height: 1.6;
 }
-.cruds{
-    width: 80%;
-    margin: auto;
+
+.cruds {
+    width: 90%; 
+    max-width: 1200px; 
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    border-radius: 8px;
 }
-.header{
+
+.header {
     text-align: center;
-    margin: 10px 0;
+    margin: 20px 0;
     text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #2c3e50; 
 }
-input{
-width: 100%;
-height: 30px;
-outline: none;
-border: none;
-margin: 4px 0;
-padding: 4px;
-border-radius: 4px;
-background: black;
-color: #fff;
+
+input {
+    width: 100%;
+    height: 40px;
+    outline: none;
+    border: 1px solid #ddd; 
+    margin: 10px 0;
+    padding: 0 10px; 
+    border-radius: 6px;
+    background: #ecf0f1; 
+    color: #333; 
+    font-size: 1rem;
+    transition: background  0.3s ease, transform 0.3s ease; 
 }
-input:hover{
-    background: #161e2d;
+
+input:focus {
+    border-color: #3498db; 
+    background-color: #ffffff; 
+}
+
+input:hover {
+    background-color: #bdc3c7;
     transform: scale(1.02);
 }
-.price input{
-    width:20%;
-}
-#total{
-    background: red;
-    padding: 5px 2px;
-    border-radius: 4px;
 
+
+.price {
+    display: flex;
+    align-items: center; 
+    gap: 10px; 
+    margin-top: 20px; 
 }
-#total::before{
-    content: "total: ";
+
+.price input {
+    width: 30%;
+    max-width: 200px; /
 }
-button{
-    width: 100%;
-    height: 30px;
-    padding: 5px 0;
-    border: none;
-    background: #1e2b47;
-    border-radius: 5px;
+
+#total {
+    background: #e74c3c;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-weight: bold;
     color: #fff;
-    transition: 0.5;
-    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100px; 
+    margin-top: 0; 
+}
 
+#total::before {
+    content: "Total: ";
+    font-weight: normal;
+    color: #ecf0f1;
 }
-button:hover{
-background-color: rgb(38, 69, 127);
-letter-spacing: 2px;
+
+#total::before {
+    content: "Total: ";
+    font-weight: normal;
+    color: #ecf0f1;
 }
-.btnOutput{
+
+button {
+    width: 100%;
+    height: 45px;
+    padding: 10px 0;
+    border: none;
+    background: #2c3e50;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background-color: #34495e;
+    letter-spacing: 2px;
+    transform: translateY(-2px); 
+}
+
+.btnOutput {
     display: flex;
     justify-content: space-between;
+    gap: 20px;
+    margin-top: 15px;
 }
-.btnOutput button{
-    width: 45%;
+
+.btnOutput button {
+    width: 48%;
 }
-#deleteAll{
-    margin: 20px 0;
+
+#deleteAll {
+    margin: 30px 0;
+    text-align: center;
 }
-table{
+
+#deleteAll button {
+    background-color: #e74c3c; 
+    color: #fff;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#deleteAll button:hover {
+    background-color: #c0392b; 
+}
+
+table {
     width: 100%;
     text-align: center;
-    margin: 10px 0;
+    margin: 20px 0;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+    font-size: 1rem;
+}
+
+table th {
+    background-color: #34495e;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+table tr:nth-child(even) {
+    background-color: #ecf0f1; 
+}
+
+table tr:hover {
+    background-color: #bdc3c7; 
+}
+
+table td {
+    color: #2c3e50;
 }
