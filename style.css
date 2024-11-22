@@ -173,3 +173,88 @@ table tr:hover {
 table td {
     color: #2c3e50;
 }
+
+
+
+/* --- Responsive --- */
+
+
+@media (max-width: 768px) {
+    .cruds {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .header {
+        font-size: 1.2rem;
+    }
+
+    .price {
+        flex-direction: column;
+        align-items: stretch; 
+        gap: 15px; 
+    }
+
+    .price input {
+        width: 100%;
+        max-width: 100%; 
+    }
+
+    #total {
+        width: 100%;
+        text-align: center;
+    }
+
+    button {
+        font-size: 1rem;
+        height: 40px;
+    }
+
+    .btnOutput {
+        flex-direction: column;
+        gap: 15px; 
+    }
+
+    .btnOutput button {
+        width: 100%; 
+    }
+
+    table th, table td {
+        padding: 10px; 
+    }
+}
+
+
+@media (max-width: 480px) {
+    .header {
+        font-size: 1rem;
+    }
+
+    .price {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+
+    .price input {
+        font-size: 0.9rem; 
+    }
+
+    button {
+        font-size: 0.9rem;
+        height: 35px;
+    }
+
+    .btnOutput button {
+        width: 100%;
+    }
+
+    table th, table td {
+        font-size: 0.9rem; 
+        padding: 8px;
+    }
+
+    table {
+        font-size: 0.9rem; 
+    }
+}
