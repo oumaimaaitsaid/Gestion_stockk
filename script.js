@@ -47,6 +47,8 @@ submit.onclick =function(){
         count:count.value,
         category:category.value
     }
+    if(title.value !='' && price.value !='' && ads.value !='' &&  taxes.value !='' &&  discount.value !='' && count.value !='' && category.value !=''  && count.value <=100){
+
     if(mode=== 'Create'){
     if(newProduct.count>1){
         for (let i =0 ;i < newProduct.count;i++){
@@ -63,13 +65,13 @@ submit.onclick =function(){
     submit.innerHTML='Create'
     count.style.display='block';
     
-    
+    clearData();
     }
     
-
+}
 
      localStorage.setItem('products',JSON.stringify(ProductData));
-    clearData();
+    
    showData()
     
 }
@@ -95,7 +97,7 @@ function showData(){
     for(let i = 0 ;i < ProductData.length;i++){
         table += `
                     <tr>
-                        <td>${i}</td>
+                        <td>${i+1}</td>
                         <td>${ProductData[i].title}</td>
                         <td>${ProductData[i].price}</td>
                         <td>${ProductData[i].taxes}</td>
